@@ -3,6 +3,8 @@ package com.mvvm.ecommerce.presentation.listing
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
@@ -37,7 +39,7 @@ class ListFragment : Fragment() {
             productsLiveData.observe(viewLifecycleOwner, { state ->
                 when (state) {
                     is Resource.Loading -> {
-                        Toast.makeText(context, "Loading...", Toast.LENGTH_SHORT).show()
+                        binding.cartLoadingGif.visibility = VISIBLE
                     }
                     is Resource.Success -> {
                         val productList = mutableListOf<Product>()
@@ -64,6 +66,7 @@ class ListFragment : Fragment() {
                                         )
                                 }
                         }
+                        binding.cartLoadingGif.visibility = GONE
                     }
                     is Resource.Error -> {
                         Toast.makeText(
@@ -71,6 +74,7 @@ class ListFragment : Fragment() {
                             state.message ?: "An error occurred.",
                             Toast.LENGTH_SHORT
                         ).show()
+                        binding.cartLoadingGif.visibility = GONE
                     }
                 }
             })
