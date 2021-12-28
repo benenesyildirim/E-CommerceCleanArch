@@ -1,7 +1,5 @@
 package com.mvvm.ecommerce.presentation.shopping_cart
 
-import android.content.SharedPreferences
-import android.util.Log
 import androidx.lifecycle.*
 import com.mvvm.ecommerce.common.Constants.PARAM_PRODUCT
 import com.mvvm.ecommerce.common.Resource
@@ -14,7 +12,7 @@ import okhttp3.ResponseBody
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
-import java.util.ArrayList
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel

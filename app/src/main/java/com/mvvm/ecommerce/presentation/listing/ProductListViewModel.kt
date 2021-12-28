@@ -19,13 +19,13 @@ class ProductListViewModel @Inject constructor(
 ) : ViewModel() {
 
     init {
-        getCharacters()
+        getProducts()
     }
 
     private val _productsLiveData = MutableLiveData<Resource<List<ProductDto>>>()
     val productsLiveData: LiveData<Resource<List<ProductDto>>> get() = _productsLiveData
 
-    private fun getCharacters() = viewModelScope.launch {
+    private fun getProducts() = viewModelScope.launch {
         try {
             getProductsUseCase.getProducts().let {
                 _productsLiveData.postValue(Resource.Loading())

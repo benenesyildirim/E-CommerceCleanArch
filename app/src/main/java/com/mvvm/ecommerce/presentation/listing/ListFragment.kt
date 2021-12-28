@@ -29,12 +29,12 @@ class ListFragment : Fragment() {
     ): View {
         binding = FragmentListBinding.inflate(layoutInflater)
 
-        observeCharacters(binding.root)
+        observeProducts(binding.root)
 
         return binding.root
     }
 
-    private fun observeCharacters(view: View) {
+    private fun observeProducts(view: View) {
         with(viewModel) {
             productsLiveData.observe(viewLifecycleOwner, { state ->
                 when (state) {

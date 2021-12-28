@@ -1,4 +1,4 @@
-package com.mvvm.ecommerce
+package com.mvvm.ecommerce.retrofit
 
 import com.google.gson.GsonBuilder
 import com.mvvm.ecommerce.retrofit.Constants.LISTING_SUCCESS_JSON

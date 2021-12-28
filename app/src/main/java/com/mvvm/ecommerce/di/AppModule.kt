@@ -28,7 +28,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCharacterRepository(api: ItemApi): ProductRepository{
+    fun provideProductRepository(api: ItemApi): ProductRepository{
         return ProductRepositoryImpl(api)
     }
 }
