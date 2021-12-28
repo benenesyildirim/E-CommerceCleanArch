@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EcommerceMvvm</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="product_will_be_deleted">Selected product will be deleted from shopping cart. Are you sure?</string>
+    <string name="loading">Loading…</string>
+    <string name="thanks_for_buying">Thank you for choosing us.</string>
+    <string name="sold_out">Item Sold Out. Do you still want to continue?</string>
+    <string name="empty_list">There is nothing to buy, please add products to buy.</string>
+</resources>
