@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.mvvm.ecommerce.domain.model.Product" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/cart_item_image"
+            loadImage="@{product.image}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/cart_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toEndOf="@id/cart_item_image"
+            android:text="@{product.name}"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            tools:text="ÜRün" />
+
+        <TextView
+            android:id="@+id/cart_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_item_name"
+            android:layout_toEndOf="@id/cart_item_image"
+            android:text="@{product.price}"
+            android:textSize="20sp"
+            tools:text="1000" />
+
+        <TextView
+            android:id="@+id/cart_item_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_item_name"
+            android:layout_toEndOf="@id/cart_item_price"
+            android:text="@{product.currency}"
+            android:textSize="17sp"
+            tools:text=" TRY" />
+
+        <ImageView
+            android:id="@+id/cart_item_delete_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_menu_delete" />
+
+        <ImageView
+            android:id="@+id/plus_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/cart_item_price"
+            android:layout_toEndOf="@id/cart_item_image"
+            android:src="@drawable/plus" />
+
+        <TextView
+            android:id="@+id/amount_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cart_item_price"
+            android:layout_toEndOf="@id/plus_iv"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@{String.valueOf(product.amount)}" />
+
+        <ImageView
+            android:id="@+id/minus_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/cart_item_price"
+            android:layout_toRightOf="@id/amount_tv"
+            android:src="@drawable/minus" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/cart_item_image"
+            android:layout_marginTop="11dp"
+            android:background="@color/black"/>
+
+    </RelativeLayout>
+</layout>
